@@ -28,8 +28,8 @@ namespace Laboratorio_4_Benjamin_Morgan
             maquina5.on();
             System.Threading.Thread.Sleep(2000);
             int tiempo =  0;
-
-            while (tiempo <= 50)
+            //para efecto de prueba uso un numero bajo, para mas iteraciones aumentar el numero dentro del siguiente while
+            while (tiempo <= 15)
             {
                 maquina1.memoria();              
                 maquina2.memoria();

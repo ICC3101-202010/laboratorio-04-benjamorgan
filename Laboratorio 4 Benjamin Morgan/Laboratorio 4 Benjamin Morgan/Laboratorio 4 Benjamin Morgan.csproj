@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Funciones Cambiantes.cs" />
     <Compile Include="Funciones Maquinas.cs" />
     <Compile Include="Maquina Almacenamiento.cs" />
     <Compile Include="Maquina Empaque.cs" />

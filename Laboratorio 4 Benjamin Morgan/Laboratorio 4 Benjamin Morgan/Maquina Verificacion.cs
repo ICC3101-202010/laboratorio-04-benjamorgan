@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Laboratorio_4_Benjamin_Morgan
 {
-    class Maquina_Verificacion : Funciones_Maquinas
+    class Maquina_Verificacion : Funciones_Maquinas, IFunciones_Cambiantes
     {
         public Maquina_Verificacion()
         {
@@ -14,25 +14,34 @@ namespace Laboratorio_4_Benjamin_Morgan
         }
 
         int x;
-        public override void memoria()
+        public void memoria()
         {
             if (x == 9)
             {
+                callworker();
+            }
+            if (x > 9)
+                Console.WriteLine("Maquina descompuesta, no se tomaron medidas a tiempo");
+            else
+                x += 1;
+        }
+        public void callworker()
+        {
+            Console.WriteLine("Memoria insuficiente en Maquina Verificacion, Accion de trabajador es necesaria");
+            Console.WriteLine("El trabajador va a venir?  (y/n)");
+            string resp = Console.ReadLine();
+
+            if (resp == "y")
+            {
                 x = 0;
-                Console.WriteLine("Maquina Verificacion, se lleno la memoria de la maquina");
+                Console.WriteLine("maquina reiniciada exitosamente");
             }
             else
-            {
-                x += 1;
+                x = 20;
 
 
 
-            }
 
         }
-
-
-
-
     }
 }

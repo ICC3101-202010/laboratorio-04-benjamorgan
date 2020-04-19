@@ -20,10 +20,7 @@ namespace Laboratorio_4_Benjamin_Morgan
         }
 
 
-        public virtual void memoria()
-        {
-
-        }
+        
 
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Laboratorio_4_Benjamin_Morgan
 {
-    class Maquina_Empaque: Funciones_Maquinas
+    class Maquina_Empaque : Funciones_Maquinas, IFunciones_Cambiantes
     {
         public Maquina_Empaque()
         {
@@ -14,24 +14,33 @@ namespace Laboratorio_4_Benjamin_Morgan
         }
 
         int x;
-        public override void memoria()
+        public void memoria()
         {
             if (x == 15)
             {
+                callworker();
+            }
+            if (x > 15)
+                Console.WriteLine("Maquina descompuesta, no se tomaron medidas a tiempo");
+            else
+                x += 1;
+        }
+        public void callworker()
+        {
+            Console.WriteLine("Memoria insuficiente en Maquina Empaque, Accion de trabajador es necesaria");
+            Console.WriteLine("El trabajador va a venir?  (y/n)");
+            string resp = Console.ReadLine();
+
+            if (resp == "y")
+            {
                 x = 0;
-                Console.WriteLine("Maquina Empaque, se lleno la memoria de la maquina");
+                Console.WriteLine("maquina reiniciada exitosamente");
             }
             else
-            {
-                x += 1;
+                x = 20;
 
 
-
-            }
 
         }
-
-
-
     }
 }
